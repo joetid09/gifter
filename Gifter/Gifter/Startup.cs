@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gifter.Repositories;
 
 namespace Gifter
 {
@@ -29,6 +30,7 @@ namespace Gifter
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IPostRepository, PostRepository>();
             services.AddControllers();
         }
 
