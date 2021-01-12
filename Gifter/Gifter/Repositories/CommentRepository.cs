@@ -31,7 +31,7 @@ namespace Gifter.Repositories
             return _context.Comment
                 .Include(u => u.UserProfile)
                 .Include(p => p.Post)
-                .Where(c => c.Id == id)
+                .Where(c => c.UserProfileId == id)
                 .ToList();
         }
 

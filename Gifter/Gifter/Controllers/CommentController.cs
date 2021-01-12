@@ -28,14 +28,29 @@ namespace Gifter.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var post = _commentRepo.GetById(id);
-            if(id != post.Id)
+            var comment = _commentRepo.GetById(id);
+            if(id != comment.Id)
             {
                 return NotFound();
             }
-            return Ok(post);
+            return Ok(comment);
         }
 
-        
+        [HttpGet("getbyuser/{id}")]
+        public IActionResult GetByUser(int id)
+        {
+            return Ok(_commentRepo.GetByUserId(id));
+        }            
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Comment comment)
+        {
+            if(id != comment.Id)
+            {
+                return BadRequest();
+            }
+            _commentRepo.UpdateComment(comment);
+            return NoContent();
+        }
     }
 }
