@@ -7,5 +7,6 @@ namespace Gifter.Repositories
     {
         List<Post> GetAll();
         Post GetById(int id);
+        List<Post> GetByUserProfileId(int id);
     }
 }

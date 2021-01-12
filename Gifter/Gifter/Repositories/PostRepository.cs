@@ -24,5 +24,13 @@ namespace Gifter.Repositories
         {
             return _context.Post.Include(p => p.UserProfile).FirstOrDefault(p => p.Id == id);
         }
+
+        public List<Post> GetByUserProfileId(int id)
+        {
+            return _context.Post.Include(p => p.UserProfile)
+                            .Where(p => p.UserProfileId == id)
+                            .OrderBy(p => p.Title)
+                            .ToList();
+        }
     }
 }
