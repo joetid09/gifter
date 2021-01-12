@@ -1,4 +1,5 @@
-﻿using Gifter.Repositories;
+﻿using Gifter.Models;
+using Gifter.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,6 +29,33 @@ namespace Gifter.Controllers
         public IActionResult Get(int id)
         {
             return Ok(_userProfileRepo.GetById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Post(UserProfile profile)
+        {
+            _userProfileRepo.AddProfile(profile);
+            return CreatedAtAction("Get", new { id = profile.Id }, profile);
+
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, UserProfile profile)
+        {
+           if(id != profile.Id)
+            {
+                return BadRequest();    
+            }
+
+            _userProfileRepo.Update(profile);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _userProfileRepo.Delete(id);
+            return NoContent();
         }
     }
 }
