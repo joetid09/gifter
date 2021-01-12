@@ -41,7 +41,8 @@ namespace Gifter.Repositories
 
         public void Delete(int id)
         {
-            _context.Remove(id);
+            var profile = GetById(id);
+            _context.Remove(profile);
             _context.SaveChanges();
         }
     }

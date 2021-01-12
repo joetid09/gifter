@@ -39,12 +39,12 @@ namespace Gifter.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, UserProfile profile)
         {
            if(id != profile.Id)
             {
-                return BadRequest();
+                return BadRequest();    
             }
 
             _userProfileRepo.Update(profile);
