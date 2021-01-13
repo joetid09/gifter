@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Post from "./Post";
 
 const PostList = () => {
     const [posts, setPosts] = useState([]);
@@ -12,13 +13,7 @@ const PostList = () => {
     return (
         <div>
             {posts.map((post) => (
-                <div key={post.id}>
-                    <img src={post.imageUrl} alt={post.title} />
-                    <p>
-                        <strong>{post.title}</strong>
-                    </p>
-                    <p>{post.caption}</p>
-                </div>
+                <Post key={post.id} post={post} />
             ))}
         </div>
     );
