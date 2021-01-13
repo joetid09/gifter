@@ -151,3 +151,6 @@ C:\Users\josep\workspace\Gifter\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.pdb
 C:\Users\josep\workspace\Gifter\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.genruntimeconfig.cache
 C:\Users\josep\workspace\Gifter\Gifter\Gifter\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\josep\workspace\Gifter\Gifter\Gifter\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\josep\workspace\Gifter\Gifter\Gifter\bin\Debug\netcoreapp3.1\client\package-lock.json
+C:\Users\josep\workspace\Gifter\Gifter\Gifter\bin\Debug\netcoreapp3.1\client\package.json
+C:\Users\josep\workspace\Gifter\Gifter\Gifter\bin\Debug\netcoreapp3.1\client\public\manifest.json
