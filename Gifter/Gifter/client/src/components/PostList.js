@@ -3,6 +3,7 @@ import Post from "./Post";
 
 const PostList = () => {
     const [posts, setPosts] = useState([]);
+    const [viewing, setViewing] = useState(false);
 
     useEffect(() => {
         fetch('/api/post')
@@ -10,13 +11,23 @@ const PostList = () => {
             .then(data => setPosts(data));
     }, []);
 
-    return (
-        <div>
-            {posts.map((post) => (
-                <Post key={post.id} post={post} />
-            ))}
-        </div>
-    );
+    if (viewing == false) {
+        return (
+            <div>
+                <button onClick={() => setViewing(true)}>view posts</button>
+            </div>
+        );
+    }
+    else if (viewing) {
+        return (
+            <div>
+                <button onClick={() => setViewing(false)}>hide posts</button>
+                {posts.map((post) => (
+                    <Post key={post.id} post={post} />
+                ))}
+            </div>
+        )
+    }
 };
 
 export default PostList;
