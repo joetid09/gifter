@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-
+import { currentDate } from "./Date.js"
+console.log(currentDate())
 const PostForm = () => {
     const [inputs, setInputs] = useState({
         Title: "",
         ImageUrl: "",
-        Caption: ""
+        Caption: "",
+        UserProfileId: 1,
+        DateCreated: currentDate()
     });
 
     // useEffect(() => {

@@ -7,8 +7,10 @@ import "./App.css"
 function App() {
   return (
     <div className="App">
+
       <PostForm />
       <PostList />
+
     </div>
   );
 }

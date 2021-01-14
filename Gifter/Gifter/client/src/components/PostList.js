@@ -22,6 +22,7 @@ const PostList = () => {
         return (
             <div>
                 <button onClick={() => setViewing(false)}>hide posts</button>
+
                 {posts.map((post) => (
                     <Post key={post.id} post={post} />
                 ))}
