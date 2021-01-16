@@ -8,7 +8,8 @@ namespace Gifter.Models
 {
     public class Post
     {
-        public int Id { get; set; }
+
+    public int Id { get; set; }
 
         [Required]
         public string Title { get; set; }
