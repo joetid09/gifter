@@ -8,9 +8,6 @@ namespace Gifter.Models
 {
     public class Post
     {
-        public Post
-            {
-            }
 
     public int Id { get; set; }
 
